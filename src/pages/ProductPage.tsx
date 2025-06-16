@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ProductReviews from "@/components/ProductReviews";
+import RelatedProducts from "@/components/RelatedProducts";
+import SizeGuide from "@/components/SizeGuide";
 import Icon from "@/components/ui/icon";
 
 const ProductPage = () => {
@@ -116,7 +119,10 @@ const ProductPage = () => {
 
             {/* Выбор размера */}
             <div className="space-y-3">
-              <h3 className="font-medium text-gray-800">Размер</h3>
+              <div className="flex items-center justify-between">
+                <h3 className="font-medium text-gray-800">Размер</h3>
+                <SizeGuide />
+              </div>
               <div className="flex flex-wrap gap-2">
                 {product.sizes.map((size) => (
                   <button
@@ -201,6 +207,16 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Отзывы */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <ProductReviews />
+      </div>
+
+      {/* Похожие товары */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-100">
+        <RelatedProducts />
       </div>
 
       <Footer />
