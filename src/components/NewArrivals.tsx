@@ -55,9 +55,10 @@ const NewArrivals = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {newItems.map((item) => (
-            <div
+            <Link
               key={item.id}
-              className="bg-white border border-pink-100 rounded-xl hover:shadow-lg transition-all duration-300 overflow-hidden group"
+              to={`/product/${item.id}`}
+              className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
             >
               <div className="relative">
                 <img
@@ -82,7 +83,7 @@ const NewArrivals = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
